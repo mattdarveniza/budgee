@@ -40,6 +40,27 @@ async function seed() {
     },
   });
 
+  const categories = [
+    {
+      slug: "utilities",
+      name: "Utilities",
+      color: "yellow",
+    },
+    {
+      slug: "entertainment",
+      name: "Entertainment",
+      color: "blue",
+    },
+  ];
+
+  for (const category of categories) {
+    await prisma.category.upsert({
+      where: { slug: category.slug },
+      update: category,
+      create: category,
+    });
+  }
+
   console.log(`Database has been seeded. 🌱`);
 }
 

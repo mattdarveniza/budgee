@@ -36,3 +36,18 @@ model Note {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId String
 }
+
+model Category {
+  slug String @id
+  name String
+  color String
+  subcategories SubCategory[]
+}
+
+model SubCategory {
+  id String @id @default(cuid())
+  name String
+
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [slug], onDelete: Cascade, onUpdate: Cascade)
+}
