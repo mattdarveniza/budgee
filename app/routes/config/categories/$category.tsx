@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import { json } from "@remix-run/node";
@@ -60,6 +60,7 @@ export default function CategorySlug() {
           </button>
         </div>
       </CategoryForm>
+      <Outlet />
     </section>
   );
 }

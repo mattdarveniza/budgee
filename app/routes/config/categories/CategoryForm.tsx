@@ -30,7 +30,7 @@ export function CategoryForm({ children, defaults }: CategoryFormProps) {
     >
       <Input name="name" label="Name" />
       <Select name="color" label="Color">
-        <option value="">Select a color</option>
+        <option value="">Select a colour</option>
         {colors.map((color) => (
           <option key={color} value={color}>
             {color}
